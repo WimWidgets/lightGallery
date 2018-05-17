@@ -110,8 +110,9 @@
                 if (this.core.s.youtubePlayerParams) {
                     a = a + '&' + $.param(this.core.s.youtubePlayerParams);
                 }
-    
-                video = '<iframe class="lg-video-object lg-youtube ' + addClass + '" width="560" height="315" src="//www.youtube.com/embed/' + isVideo.youtube[1] + a + '" frameborder="0" allowfullscreen></iframe>';
+
+                var nocookie = src.match(/youtube-nocookie\.com/i);
+                video = '<iframe class="lg-video-object lg-youtube ' + addClass + '" width="560" height="315" src="//www.youtube' + (nocookie ? '-nocookie' : '') + '.com/embed/' + isVideo.youtube[1] + a + '" frameborder="0" allowfullscreen></iframe>';
     
             } else if (isVideo.vimeo) {
     
